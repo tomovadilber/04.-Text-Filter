@@ -1,0 +1,29 @@
+using System;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Collections.Generic;
+using System.Collections;
+
+
+namespace AssociativeArrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<string> banned = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).ToList();
+            
+            StringBuilder text = new StringBuilder(Console.ReadLine());
+
+            foreach (var word in banned)
+            {
+                string toBeReplaced = new string('*', word.Length);
+                text.Replace(word, toBeReplaced);
+            }
+
+            Console.WriteLine(text);
+        }
+    }
+}
